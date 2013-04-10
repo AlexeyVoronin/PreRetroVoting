@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSC.PreRetroVoting.DataAccess", "RSC.PreRetroVoting.DataAccess\RSC.PreRetroVoting.DataAccess.csproj", "{4D56EAA7-F26C-45F4-A15C-75585C95DD59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSC.PreRetroVoting.DataAccess.IntegrationTests", "RSC.PreRetroVoting.DataAccess.IntegrationTests\RSC.PreRetroVoting.DataAccess.IntegrationTests.csproj", "{EB72D6B6-81A2-4360-A1DC-F390BD9A1C1E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5EE54301-B6A6-426F-8C38-DA8D686E44B1}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		RSC.PreRetroVoting.vsmdi = RSC.PreRetroVoting.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSC.PreRetroVoting.DataAccess.UnitTests", "RSC.PreRetroVoting.DataAccess.UnitTests\RSC.PreRetroVoting.DataAccess.UnitTests.csproj", "{CE9F9FA0-751B-446C-A83D-872A2F39544E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSC.PreRetroVoting.WebUi", "RSC.PreRetroVoting.WebUi\RSC.PreRetroVoting.WebUi.csproj", "{39D3329D-70B0-441A-8C92-4325921C5CD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSC.PreRetroVoting.WebUi.Tests", "RSC.PreRetroVoting.WebUi.Tests\RSC.PreRetroVoting.WebUi.Tests.csproj", "{13A1F00D-2ADC-4749-BAD4-EBC8EA0ECC56}"
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = RSC.PreRetroVoting.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D56EAA7-F26C-45F4-A15C-75585C95DD59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D56EAA7-F26C-45F4-A15C-75585C95DD59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D56EAA7-F26C-45F4-A15C-75585C95DD59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D56EAA7-F26C-45F4-A15C-75585C95DD59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB72D6B6-81A2-4360-A1DC-F390BD9A1C1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB72D6B6-81A2-4360-A1DC-F390BD9A1C1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB72D6B6-81A2-4360-A1DC-F390BD9A1C1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB72D6B6-81A2-4360-A1DC-F390BD9A1C1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE9F9FA0-751B-446C-A83D-872A2F39544E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE9F9FA0-751B-446C-A83D-872A2F39544E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE9F9FA0-751B-446C-A83D-872A2F39544E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE9F9FA0-751B-446C-A83D-872A2F39544E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39D3329D-70B0-441A-8C92-4325921C5CD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39D3329D-70B0-441A-8C92-4325921C5CD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39D3329D-70B0-441A-8C92-4325921C5CD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39D3329D-70B0-441A-8C92-4325921C5CD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13A1F00D-2ADC-4749-BAD4-EBC8EA0ECC56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13A1F00D-2ADC-4749-BAD4-EBC8EA0ECC56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13A1F00D-2ADC-4749-BAD4-EBC8EA0ECC56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13A1F00D-2ADC-4749-BAD4-EBC8EA0ECC56}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
