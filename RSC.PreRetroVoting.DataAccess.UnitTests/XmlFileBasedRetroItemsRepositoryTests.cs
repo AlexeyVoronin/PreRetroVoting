@@ -11,7 +11,7 @@ using System.Xml.Linq;
 namespace RSC.PreRetroVoting.DataAccess.UnitTests
 {
   [TestClass]
-  public class FileBasedRetroItemsRepositoryTests : TestWithMocks
+  public class XmlFileBasedRetroItemsRepositoryTests : TestWithMocks
   {
     [TestMethod]
     public void AddRetroItemTest()
@@ -20,7 +20,7 @@ namespace RSC.PreRetroVoting.DataAccess.UnitTests
 
       var xmlFileProvider = MockFactory.CreateMock<IXmlFileProvider>();
       var xmlFile = MockFactory.CreateMock<IXmlFile>();
-      var fileBasedRetroItemsRepository = new FileBasedRetroItemsRepository(
+      var fileBasedRetroItemsRepository = new XmlFileBasedRetroItemsRepository(
         xmlFileProvider.MockObject);
 
       xmlFileProvider.Expects.One
@@ -48,7 +48,7 @@ namespace RSC.PreRetroVoting.DataAccess.UnitTests
         o => new XElement(RetroItemXmlFile.RetroItemElementName, o)).ToList();
       var xmlFileProvider = MockFactory.CreateMock<IXmlFileProvider>();
       var xmlFile = MockFactory.CreateMock<IXmlFile>();
-      var fileBasedRetroItemsRepository = new FileBasedRetroItemsRepository(
+      var fileBasedRetroItemsRepository = new XmlFileBasedRetroItemsRepository(
         xmlFileProvider.MockObject);
 
       xmlFileProvider.Expects.One

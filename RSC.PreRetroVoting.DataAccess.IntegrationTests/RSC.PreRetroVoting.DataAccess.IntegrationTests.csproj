@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RetroItemsDataAccessFacadeTests.cs" />
+    <Compile Include="DataAccessFacadeTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RSC.PreRetroVoting.DataAccess\RSC.PreRetroVoting.DataAccess.csproj">

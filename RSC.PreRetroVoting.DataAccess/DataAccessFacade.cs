@@ -9,12 +9,12 @@ using System.IO;
 
 namespace RSC.PreRetroVoting.DataAccess
 {
-  public sealed class RetroItemsDataAccessFacade : IRetroItemsDataAccessFacade
+  public sealed class DataAccessFacade : IDataAccessFacade
   {
-    public RetroItemsDataAccessFacade()
+    public DataAccessFacade()
     {
       RetroItemsStoragePath = Path.Combine(Path.GetTempPath(), RetroItemXmlFile.FileName);
-      RetroItemsRepository = new FileBasedRetroItemsRepository(
+      RetroItemsRepository = new XmlFileBasedRetroItemsRepository(
         new TemplateXmlFileProviderDecorator(
           new XDocumentFileProvider(RetroItemsStoragePath),
           new FileOperations(),

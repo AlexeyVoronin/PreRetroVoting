@@ -45,12 +45,12 @@
   <ItemGroup>
     <Compile Include="FileSystem\FileOperations.cs" />
     <Compile Include="FileSystem\IFileOperations.cs" />
-    <Compile Include="IRetroItemsDataAccessFacade.cs" />
+    <Compile Include="IDataAccessFacade.cs" />
     <Compile Include="IRetroItemsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RetroItemsAdders\FileBasedRetroItemsRepository.cs" />
-    <Compile Include="RetroItemsAdders\RetroItemXmlFile.cs" />
-    <Compile Include="RetroItemsDataAccessFacade.cs" />
+    <Compile Include="RetroItems\XmlFileBasedRetroItemsRepository.cs" />
+    <Compile Include="RetroItems\RetroItemXmlFile.cs" />
+    <Compile Include="DataAccessFacade.cs" />
     <Compile Include="Xml\IXmlFile.cs" />
     <Compile Include="Xml\IXmlFileProvider.cs" />
     <Compile Include="Xml\TemplateXmlFileProviderDecorator.cs" />

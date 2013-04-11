@@ -8,12 +8,12 @@ using System.IO;
 namespace RSC.PreRetroVoting.DataAccess.IntegrationTests
 {
   [TestClass]
-  public class RetroItemsDataAccessFacadeTests
+  public class DataAccessFacadeTests
   {
     [TestMethod]
     public void AddingRetroItemTest()
     {
-      IRetroItemsDataAccessFacade retroItemsDataAccessFacade = new RetroItemsDataAccessFacade();
+      IDataAccessFacade retroItemsDataAccessFacade = new DataAccessFacade();
       
       File.Delete(retroItemsDataAccessFacade.RetroItemsStoragePath);
 

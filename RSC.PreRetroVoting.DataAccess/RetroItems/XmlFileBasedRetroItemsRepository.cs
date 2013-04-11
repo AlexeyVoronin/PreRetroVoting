@@ -7,9 +7,9 @@ using System.Xml.Linq;
 
 namespace RSC.PreRetroVoting.DataAccess.RetroItemsAdders
 {
-  internal sealed class FileBasedRetroItemsRepository : IRetroItemsRepository
+  internal sealed class XmlFileBasedRetroItemsRepository : IRetroItemsRepository
   {
-    public FileBasedRetroItemsRepository(IXmlFileProvider xmlFileProvider)
+    public XmlFileBasedRetroItemsRepository(IXmlFileProvider xmlFileProvider)
     {
       _xmlFileProvider = xmlFileProvider;
     }

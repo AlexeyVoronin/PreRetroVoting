@@ -5,7 +5,7 @@ using System.Text;
 
 namespace RSC.PreRetroVoting.DataAccess
 {
-  public interface IRetroItemsDataAccessFacade
+  public interface IDataAccessFacade
   {
     string RetroItemsStoragePath { get; }
 
