@@ -7,14 +7,21 @@ using System.Xml.Linq;
 
 namespace RSC.PreRetroVoting.DataAccess.RetroItemsAdders
 {
-  internal sealed class FileBasedRetroItemsProvider : IRetroItemsProvider
+  internal sealed class XmlFileBasedRetroItemsRepository : IRetroItemsRepository
   {
-    public FileBasedRetroItemsProvider(IXmlFileProvider xmlFileProvider)
+    public XmlFileBasedRetroItemsRepository(IXmlFileProvider xmlFileProvider)
     {
       _xmlFileProvider = xmlFileProvider;
     }
 
-    #region IRetroItemsProvider Members
+    public void AddRetroItem(string itemDescription)
+    {
+      using (var file = _xmlFileProvider.OpenXmlFile())
+      {
+        file.AddElement(new XElement(RetroItemXmlFile.RetroItemElementName, itemDescription));
+        file.SaveFile();
+      }
+    }
 
     public IEnumerable<string> GetRetroItems()
     {
@@ -23,8 +30,6 @@ namespace RSC.PreRetroVoting.DataAccess.RetroItemsAdders
         return file.GetElements().Select(e => e.Value);
       }
     }
-
-    #endregion
 
     private readonly IXmlFileProvider _xmlFileProvider;
   }
