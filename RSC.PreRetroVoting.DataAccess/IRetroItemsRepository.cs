@@ -7,8 +7,8 @@ namespace RSC.PreRetroVoting.DataAccess
 {
   public interface IRetroItemsRepository
   {
-    IEnumerable<string> GetRetroItems();
+    IEnumerable<RetroItem> GetRetroItems();
 
-    void AddRetroItem(string itemDescription);
+    void AddRetroItem(RetroItem itemDescription);
   }
 }

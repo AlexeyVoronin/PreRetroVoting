@@ -19,13 +19,13 @@ namespace RSC.PreRetroVoting.DataAccess.IntegrationTests
 
       IRetroItemsRepository retroItemsRepository = retroItemsDataAccessFacade.RetroItemsRepository;
 
-      const string TestMessage = "testItem";
+      var testRetroItem = new RetroItem { Description = "testItem" };
 
-      retroItemsRepository.AddRetroItem(TestMessage);
+      retroItemsRepository.AddRetroItem(testRetroItem);
 
       var result = retroItemsRepository.GetRetroItems();
 
-      CollectionAssert.AreEquivalent(new[] { TestMessage }, result.ToList());
+      CollectionAssert.AreEquivalent(new[] { testRetroItem }, result.ToList());
     }
   }
 }

@@ -14,20 +14,20 @@ namespace RSC.PreRetroVoting.DataAccess.RetroItemsAdders
       _xmlFileProvider = xmlFileProvider;
     }
 
-    public void AddRetroItem(string itemDescription)
+    public void AddRetroItem(RetroItem retroItem)
     {
       using (var file = _xmlFileProvider.OpenXmlFile())
       {
-        file.AddElement(new XElement(RetroItemXmlFile.RetroItemElementName, itemDescription));
+        file.AddElement(new XElement(RetroItemXmlFile.RetroItemElementName, retroItem.Description));
         file.SaveFile();
       }
     }
 
-    public IEnumerable<string> GetRetroItems()
+    public IEnumerable<RetroItem> GetRetroItems()
     {
       using (var file = _xmlFileProvider.OpenXmlFile())
       {
-        return file.GetElements().Select(e => e.Value);
+        return file.GetElements().Select(e => new RetroItem { Description = e.Value });
       }
     }
 
