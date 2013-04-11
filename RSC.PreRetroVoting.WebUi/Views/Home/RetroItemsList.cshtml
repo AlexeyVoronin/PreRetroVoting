@@ -1,5 +1,15 @@
-﻿@{
-    ViewBag.Title = "RetroItemsList";
-}
+﻿@model IEnumerable<string>
 
 <h2>RetroItemsList</h2>
+@foreach (var item in Model)
+{
+     <p>@item</p>
+}
+
+
+@using(Html.BeginForm("AddItem", "Home"))
+{
+
+    @Html.TextBox("text")
+    <input type="submit" value="Добавить" />
+}
