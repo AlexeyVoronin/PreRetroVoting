@@ -5,8 +5,10 @@ using System.Text;
 
 namespace RSC.PreRetroVoting.DataAccess
 {
-  public interface IRetroItemsProvider
+  public interface IRetroItemsRepository
   {
     IEnumerable<string> GetRetroItems();
+
+    void AddRetroItem(string itemDescription);
   }
 }

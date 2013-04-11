@@ -13,22 +13,20 @@ namespace RSC.PreRetroVoting.DataAccess
   {
     public RetroItemsDataAccessFacade()
     {
-      var rootDirectory = Path.GetTempPath();
-      var retroItemsXmlFilePath = Path.Combine(rootDirectory, RetroItemXmlFile.FileName);
-      var xmlFileProvider = new TemplateXmlFileProviderDecorator(
-          new XDocumentFileProvider(retroItemsXmlFilePath),
+      RetroItemsStoragePath = Path.Combine(Path.GetTempPath(), RetroItemXmlFile.FileName);
+      RetroItemsRepository = new FileBasedRetroItemsRepository(
+        new TemplateXmlFileProviderDecorator(
+          new XDocumentFileProvider(RetroItemsStoragePath),
           new FileOperations(),
           RetroItemXmlFile.Template,
-          retroItemsXmlFilePath);
-      Adder = new FileBasedRetroItemAdder(xmlFileProvider);
-      Provider = new FileBasedRetroItemsProvider(xmlFileProvider);
+          RetroItemsStoragePath));
     }
 
     #region IRetroItemsDataAccessFacade Members
 
-    public IRetroItemAdder Adder { get; private set; }
+    public string RetroItemsStoragePath { get; private set; }
 
-    public IRetroItemsProvider Provider { get; private set; }
+    public IRetroItemsRepository RetroItemsRepository { get; private set; }
 
     #endregion
   }

@@ -7,8 +7,8 @@ namespace RSC.PreRetroVoting.DataAccess
 {
   public interface IRetroItemsDataAccessFacade
   {
-    IRetroItemAdder Adder { get; }
+    string RetroItemsStoragePath { get; }
 
-    IRetroItemsProvider Provider { get; }
+    IRetroItemsRepository RetroItemsRepository { get; }
   }
 }
