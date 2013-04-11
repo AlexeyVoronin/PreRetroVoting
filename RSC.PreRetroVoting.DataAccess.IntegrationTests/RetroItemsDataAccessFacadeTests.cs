@@ -20,7 +20,7 @@ namespace RSC.PreRetroVoting.DataAccess.IntegrationTests
 
       var result = retroItemsDataAccessFacade.Provider.GetRetroItems();
 
-      CollectionAssert.Contains(result.ToList(), TestMessage);
+      CollectionAssert.AreEquivalent(new[] { TestMessage }, result.ToList());
     }
   }
 }

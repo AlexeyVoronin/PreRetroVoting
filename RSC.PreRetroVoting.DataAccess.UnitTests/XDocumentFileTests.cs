@@ -17,7 +17,7 @@ namespace RSC.PreRetroVoting.DataAccess.UnitTests
     [TestMethod]
     public void OpenFileTest()
     {
-      const string TestFileName = "XDocumentFileTests.OpenFileTest";
+      const string TestFileName = "XDocumentFileTests.OpenFileTest.xml";
 
       CreateTestXmlFile(TestFileName);
 
@@ -30,7 +30,7 @@ namespace RSC.PreRetroVoting.DataAccess.UnitTests
     [TestMethod]
     public void AddXElementTest()
     {
-      const string TestFileName = "XDocumentFileTests.AddXElementTest";
+      const string TestFileName = "XDocumentFileTests.AddXElementTest.xml";
 
       CreateTestXmlFile(TestFileName);
 
