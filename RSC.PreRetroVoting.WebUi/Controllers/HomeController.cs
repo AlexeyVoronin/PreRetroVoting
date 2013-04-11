@@ -10,7 +10,7 @@ namespace RSC.PreRetroVoting.WebUi.Controllers
         {
             return DoWithRetroItemsDataAccessFacade(f =>
             {
-                return View("RetroItemsList", f.Provider.GetRetroItems());
+                return View("RetroItemsList", f.RetroItemsRepository.GetRetroItems());
             });
         }
 
@@ -18,14 +18,14 @@ namespace RSC.PreRetroVoting.WebUi.Controllers
         {
             return DoWithRetroItemsDataAccessFacade(f => 
             {
-                f.Adder.AddRetroItem(text);
+                f.RetroItemsRepository.AddRetroItem(text);
                 return Index();
             });
         }
 
-        private T DoWithRetroItemsDataAccessFacade<T>(Func<IRetroItemsDataAccessFacade, T> func)
+        private T DoWithRetroItemsDataAccessFacade<T>(Func<IDataAccessFacade, T> func)
         { 
-            var retroItemsDataAccessFacade = new RetroItemsDataAccessFacade();
+            var retroItemsDataAccessFacade = new DataAccessFacade();
             return func(retroItemsDataAccessFacade);
         }
     }
