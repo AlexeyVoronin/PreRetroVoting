@@ -1,4 +1,6 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
+using RSC.PreRetroVoting.DataAccess;
 
 namespace RSC.PreRetroVoting.WebUi.Controllers
 {
@@ -6,14 +8,25 @@ namespace RSC.PreRetroVoting.WebUi.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
-
-            return View();
+            return DoWithRetroItemsDataAccessFacade(f =>
+            {
+                return View("RetroItemsList", f.RetroItemsRepository.GetRetroItems());
+            });
         }
 
-        public ActionResult RetroItemsList()
+        public ActionResult AddItem(string text)
         {
-            return View("RetroItemsList");
+            return DoWithRetroItemsDataAccessFacade(f => 
+            {
+                f.RetroItemsRepository.AddRetroItem(text);
+                return Index();
+            });
+        }
+
+        private T DoWithRetroItemsDataAccessFacade<T>(Func<IDataAccessFacade, T> func)
+        { 
+            var retroItemsDataAccessFacade = new DataAccessFacade();
+            return func(retroItemsDataAccessFacade);
         }
     }
 }
