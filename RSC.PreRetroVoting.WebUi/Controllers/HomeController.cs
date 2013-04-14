@@ -14,13 +14,19 @@ namespace RSC.PreRetroVoting.WebUi.Controllers
             });
         }
 
-        public ActionResult AddItem(string text)
+        public ActionResult AddItem(string description)
         {
             return DoWithRetroItemsDataAccessFacade(f => 
             {
-                f.RetroItemsRepository.AddRetroItem(text);
+                f.RetroItemsRepository.AddRetroItem(new RetroItem { Description = description });
                 return Index();
             });
+        }
+
+        public ActionResult Vote(RetroItem retroItem)
+        {
+
+            return Index();
         }
 
         private T DoWithRetroItemsDataAccessFacade<T>(Func<IDataAccessFacade, T> func)

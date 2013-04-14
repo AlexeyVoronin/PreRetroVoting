@@ -11,6 +11,8 @@ namespace RSC.PreRetroVoting.DataAccess.RetroItemsAdders
 
     public const string RetroItemElementName = "RetroItem";
 
+    public const string RetroItemIdAttributeName = "Id";
+
     public const string Template = @"<?xml version=""1.0"" encoding=""utf-8"" ?><RetroItems></RetroItems>";
   }
 }

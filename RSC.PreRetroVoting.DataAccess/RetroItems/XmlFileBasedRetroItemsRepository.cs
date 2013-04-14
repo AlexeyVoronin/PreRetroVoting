@@ -18,7 +18,13 @@ namespace RSC.PreRetroVoting.DataAccess.RetroItemsAdders
     {
       using (var file = _xmlFileProvider.OpenXmlFile())
       {
-        file.AddElement(new XElement(RetroItemXmlFile.RetroItemElementName, retroItem.Description));
+        var retroItemElement = new XElement(RetroItemXmlFile.RetroItemElementName, retroItem.Description);
+        retroItemElement.SetAttributeValue(
+          XName.Get(RetroItemXmlFile.RetroItemIdAttributeName),
+          Guid.NewGuid());
+
+        file.AddElement(retroItemElement);
+
         file.SaveFile();
       }
     }
@@ -27,8 +33,20 @@ namespace RSC.PreRetroVoting.DataAccess.RetroItemsAdders
     {
       using (var file = _xmlFileProvider.OpenXmlFile())
       {
-        return file.GetElements().Select(e => new RetroItem { Description = e.Value });
+        return file.GetElements().Select(e => 
+          new RetroItem
+          {
+            Id = GetGuidOrEmpty(e, RetroItemXmlFile.RetroItemIdAttributeName),
+            Description = e.Value 
+          });
       }
+    }
+
+    private Guid GetGuidOrEmpty(XElement element, string attributeName)
+    {
+      var attribute = element.Attribute(attributeName);
+      
+      return attribute != null ? Guid.Parse(attribute.Value) : Guid.Empty;
     }
 
     private readonly IXmlFileProvider _xmlFileProvider;
