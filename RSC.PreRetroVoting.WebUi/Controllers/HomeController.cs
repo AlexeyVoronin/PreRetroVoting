@@ -4,35 +4,29 @@ using RSC.PreRetroVoting.DataAccess;
 
 namespace RSC.PreRetroVoting.WebUi.Controllers
 {
-    public class HomeController : Controller
+  public class HomeController : Controller
+  {
+    public HomeController(IRetroItemsRepository retroItemsRepository)
     {
-        public ActionResult Index()
-        {
-            return DoWithRetroItemsDataAccessFacade(f =>
-            {
-                return View("RetroItemsList", f.RetroItemsRepository.GetRetroItems());
-            });
-        }
-
-        public ActionResult AddItem(string description)
-        {
-            return DoWithRetroItemsDataAccessFacade(f => 
-            {
-                f.RetroItemsRepository.AddRetroItem(new RetroItem { Description = description });
-                return Index();
-            });
-        }
-
-        public ActionResult Vote(RetroItem retroItem)
-        {
-
-            return Index();
-        }
-
-        private T DoWithRetroItemsDataAccessFacade<T>(Func<IDataAccessFacade, T> func)
-        { 
-            var retroItemsDataAccessFacade = new DataAccessFacade();
-            return func(retroItemsDataAccessFacade);
-        }
+      _retroItemsRepository = retroItemsRepository;
     }
+
+    public ActionResult Index()
+    {
+      return View("RetroItemsList", _retroItemsRepository.GetRetroItems());
+    }
+
+    public ActionResult AddItem(string description)
+    {
+        _retroItemsRepository.AddRetroItem(new RetroItem { Description = description });
+        return Index();
+    }
+
+    public ActionResult Vote(RetroItem retroItem)
+    {
+      return Index();
+    }
+
+    private IRetroItemsRepository _retroItemsRepository;
+  }
 }

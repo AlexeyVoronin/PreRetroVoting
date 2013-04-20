@@ -31,8 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NMock3">
-      <HintPath>..\Libs\NMock3\NMock3.dll</HintPath>
+    <Reference Include="Ninject">
+      <HintPath>..\Libs\Ninject\Ninject.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -47,6 +47,7 @@
     <Compile Include="FileSystem\IFileOperations.cs" />
     <Compile Include="IDataAccessFacade.cs" />
     <Compile Include="IRetroItemsRepository.cs" />
+    <Compile Include="NinjectDataAccessFacade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RetroItem.cs" />
     <Compile Include="RetroItems\XmlFileBasedRetroItemsRepository.cs" />
