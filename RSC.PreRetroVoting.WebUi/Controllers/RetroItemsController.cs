@@ -4,27 +4,27 @@ using RSC.PreRetroVoting.DataAccess;
 
 namespace RSC.PreRetroVoting.WebUi.Controllers
 {
-  public class HomeController : Controller
+  public class RetroItemsController : Controller
   {
-    public HomeController(IRetroItemsRepository retroItemsRepository)
+    public RetroItemsController(IRetroItemsRepository retroItemsRepository)
     {
       _retroItemsRepository = retroItemsRepository;
     }
 
-    public ActionResult Index()
+    public ActionResult List()
     {
-      return View("RetroItemsList", _retroItemsRepository.GetRetroItems());
+      return View(_retroItemsRepository.GetRetroItems());
     }
 
     public ActionResult AddItem(string description)
     {
         _retroItemsRepository.AddRetroItem(new RetroItem { Description = description });
-        return Index();
+        return List();
     }
 
     public ActionResult Vote(RetroItem retroItem)
     {
-      return Index();
+      return List();
     }
 
     private IRetroItemsRepository _retroItemsRepository;

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using RSC.PreRetroVoting.DataAccess.RetroItemsAdders;
+﻿using RSC.PreRetroVoting.DataAccess.RetroItemsAdders;
 using RSC.PreRetroVoting.DataAccess.Xml;
 using RSC.PreRetroVoting.DataAccess.FileSystem;
 using System.IO;

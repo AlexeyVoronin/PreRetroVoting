@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using Ninject;
 using RSC.PreRetroVoting.DataAccess;
@@ -18,7 +16,7 @@ namespace RSC.PreRetroVoting.WebUi.Infrastructure
 
     public object GetService(Type serviceType)
     {
-      if (serviceType == typeof(HomeController))
+      if (serviceType == typeof(RetroItemsController))
         return _kernel.Get(serviceType);
       else
         return null;
