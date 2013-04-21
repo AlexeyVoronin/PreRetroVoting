@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Web.Mvc;
 using RSC.PreRetroVoting.DataAccess;
 
@@ -11,22 +12,25 @@ namespace RSC.PreRetroVoting.WebUi.Controllers
       _retroItemsRepository = retroItemsRepository;
     }
 
-    public ActionResult List()
+    public ViewResult List()
     {
-      return View(_retroItemsRepository.GetRetroItems());
+      return View(RetroItemsViewName, _retroItemsRepository.GetRetroItems()
+        .OrderBy(i => i.VoterNames == null ? 0 : i.VoterNames.Count())
+        .Reverse());
     }
 
-    public ActionResult AddItem(string description)
+    public ViewResult AddItem(string description)
     {
         _retroItemsRepository.AddRetroItem(new RetroItem { Description = description });
         return List();
     }
 
-    public ActionResult Vote(RetroItem retroItem)
+    public ViewResult Vote(RetroItem retroItem)
     {
       return List();
     }
 
     private IRetroItemsRepository _retroItemsRepository;
+    private const string RetroItemsViewName = "List";
   }
 }
