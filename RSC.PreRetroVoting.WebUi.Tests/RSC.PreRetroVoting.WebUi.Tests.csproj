@@ -110,9 +110,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RSC.PreRetroVoting.DataAccess\RSC.PreRetroVoting.DataAccess.csproj">
-      <Project>{4d56eaa7-f26c-45f4-a15c-75585c95dd59}</Project>
-      <Name>RSC.PreRetroVoting.DataAccess</Name>
+    <ProjectReference Include="..\RSC.PreRetroVoting.DataAccess.Model\RSC.PreRetroVoting.DataAccess.Model.csproj">
+      <Project>{ebbb3e59-66ef-42db-989a-c991d6df1e0a}</Project>
+      <Name>RSC.PreRetroVoting.DataAccess.Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\RSC.PreRetroVoting.WebUi\RSC.PreRetroVoting.WebUi.csproj">
       <Project>{39D3329D-70B0-441A-8C92-4325921C5CD3}</Project>

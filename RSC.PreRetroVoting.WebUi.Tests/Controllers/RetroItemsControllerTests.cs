@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using RSC.PreRetroVoting.DataAccess;
+using RSC.PreRetroVoting.DataAccess.Model;
 using RSC.PreRetroVoting.WebUi.Controllers;
 
 namespace RSC.PreRetroVoting.WebUi.Tests.Controllers

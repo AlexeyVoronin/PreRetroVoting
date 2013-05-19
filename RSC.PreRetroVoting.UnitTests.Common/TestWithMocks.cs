@@ -5,7 +5,7 @@ using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NMock;
 
-namespace RSC.PreRetroVoting.DataAccess.UnitTests
+namespace RSC.PreRetroVoting.UnitTests.Common
 {
   [TestClass]
   public abstract class TestWithMocks : IDisposable

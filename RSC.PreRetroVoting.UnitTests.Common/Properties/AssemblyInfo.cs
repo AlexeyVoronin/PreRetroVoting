@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("RSC.PreRetroVoting.DataAccess.IntegrationTests")]
+[assembly: AssemblyTitle("RSC.PreRetroVoting.UnitTests.Common")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("RSC.PreRetroVoting.DataAccess.IntegrationTests")]
+[assembly: AssemblyProduct("RSC.PreRetroVoting.UnitTests.Common")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("b6ed383a-7cf0-429f-97c0-f36dffca29fc")]
+[assembly: Guid("1b43ce66-cc6c-43f0-aa50-8f1e9e9f3dbf")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -31,5 +31,6 @@ using System.Runtime.InteropServices;
 //
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
+// [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]

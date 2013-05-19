@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Web.Mvc;
-using RSC.PreRetroVoting.DataAccess;
+using RSC.PreRetroVoting.DataAccess.Model;
 
 namespace RSC.PreRetroVoting.WebUi.Controllers
 {
@@ -21,7 +21,12 @@ namespace RSC.PreRetroVoting.WebUi.Controllers
 
     public ViewResult AddItem(string description)
     {
-        _retroItemsRepository.AddRetroItem(new RetroItem { Description = description });
+        _retroItemsRepository.AddRetroItem(
+          new RetroItem 
+          {
+            Id = Guid.NewGuid(), 
+            Description = description
+          });
         return List();
     }
 

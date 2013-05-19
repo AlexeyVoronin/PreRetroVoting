@@ -63,9 +63,6 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.DirectoryServices" />
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
@@ -245,9 +242,13 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RSC.PreRetroVoting.DataAccess\RSC.PreRetroVoting.DataAccess.csproj">
-      <Project>{4D56EAA7-F26C-45F4-A15C-75585C95DD59}</Project>
-      <Name>RSC.PreRetroVoting.DataAccess</Name>
+    <ProjectReference Include="..\RSC.PreRetroVoting.DataAccess.EF\RSC.PreRetroVoting.DataAccess.EF.csproj">
+      <Project>{2c0ba960-6ae8-44ed-a53d-d6ae206ff911}</Project>
+      <Name>RSC.PreRetroVoting.DataAccess.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSC.PreRetroVoting.DataAccess.Model\RSC.PreRetroVoting.DataAccess.Model.csproj">
+      <Project>{ebbb3e59-66ef-42db-989a-c991d6df1e0a}</Project>
+      <Name>RSC.PreRetroVoting.DataAccess.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

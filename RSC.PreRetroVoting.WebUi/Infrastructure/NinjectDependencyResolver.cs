@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Web.Mvc;
 using Ninject;
-using RSC.PreRetroVoting.DataAccess;
+using RSC.PreRetroVoting.DataAccess.Model;
+using RSC.PreRetroVoting.DataAccess.EF;
 using RSC.PreRetroVoting.WebUi.Controllers;
 
 namespace RSC.PreRetroVoting.WebUi.Infrastructure
@@ -29,7 +30,7 @@ namespace RSC.PreRetroVoting.WebUi.Infrastructure
 
     private void ConfigureKernel()
     {
-      _kernel.Bind<IRetroItemsRepository>().ToMethod(c => new NinjectDataAccessFacade().RetroItemsRepository);
+      _kernel.Bind<IRetroItemsRepository>().ToMethod(c => new EntityFrameworkRetroItemsRepository());
     }
 
     private IKernel _kernel = new StandardKernel();
