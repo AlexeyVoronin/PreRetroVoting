@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RSC.PreRetroVoting.DataAccess.Model;
 using RSC.PreRetroVoting.DataAccess.EF.Contexts;
+using RSC.PreRetroVoting.DataAccess.Model;
 
 namespace RSC.PreRetroVoting.DataAccess.EF
 {
@@ -13,7 +11,7 @@ namespace RSC.PreRetroVoting.DataAccess.EF
     public EntityFrameworkRetroItemsRepository()
     {
       _dbContext = new RetroItemsDbContext();
-      _dbContext.Database.Initialize(false);
+        _dbContext.Database.Initialize(false);
     }
 
     public IEnumerable<RetroItem> GetRetroItems()
@@ -29,7 +27,9 @@ namespace RSC.PreRetroVoting.DataAccess.EF
 
     public void Vote(Guid retroIteId, string voter)
     {
-      throw new NotImplementedException();
+        var retroItem = _dbContext.RetroItems.First(item => item.Id == retroIteId);
+        retroItem.Vote(voter);
+        _dbContext.SaveChanges();
     }
 
     public void Dispose()
@@ -37,6 +37,6 @@ namespace RSC.PreRetroVoting.DataAccess.EF
       _dbContext.Dispose();
     }
 
-    private RetroItemsDbContext _dbContext;
+    private readonly RetroItemsDbContext _dbContext;
   }
 }

@@ -14,9 +14,11 @@ namespace RSC.PreRetroVoting.WebUi.Controllers
 
     public ViewResult List()
     {
-      return View(RetroItemsViewName, _retroItemsRepository.GetRetroItems()
-        .OrderBy(i => i.VoterNames == null ? 0 : i.VoterNames.Count())
-        .Reverse());
+        return View(
+            RetroItemsViewName,
+            _retroItemsRepository.GetRetroItems()
+                                 .OrderBy(i => i.VoterNames.Count())
+                                 .Reverse());
     }
 
     public ViewResult AddItem(string description)
@@ -32,10 +34,12 @@ namespace RSC.PreRetroVoting.WebUi.Controllers
 
     public ViewResult Vote(RetroItem retroItem)
     {
+        _retroItemsRepository.Vote(retroItem.Id, User.Identity.Name);
       return List();
     }
 
-    private IRetroItemsRepository _retroItemsRepository;
+    private readonly IRetroItemsRepository _retroItemsRepository;
+
     private const string RetroItemsViewName = "List";
   }
 }
